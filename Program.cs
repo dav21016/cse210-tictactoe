@@ -3,7 +3,7 @@
     static void Main(string[] args)
     {
 
-        List<string> board = GetNewBoard();
+        Board board = new Board();
         string currentPlayer = "x";
 
         while (!IsGameOver(board))
@@ -16,16 +16,13 @@
             currentPlayer = GetNextPlayer(currentPlayer);
         }
 
-        DisplayBoard(board);
+        board.print();
         Console.WriteLine("Good game. Thanks for playing!");
     }
 
     /// <summary>Gets a new instance of the board with the numbers 1-9 in place. </summary>
     /// <returns>A list of 9 strings representing each square.</returns>
-    static List<string> GetNewBoard()
-    {
-       return new List<string> {"1","2","3","4","5","6","7","8","9"};
-    }
+    
 
     /// <summary>Displays the board in a 3x3 grid.</summary>
     /// <param name="board">The board</param>
